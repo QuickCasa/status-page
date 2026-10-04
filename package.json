@@ -1,0 +1,44 @@
+{
+  "name": "status-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A free, open source status page that runs on GitHub. GitHub Actions checks your sites every five minutes and publishes the page, 90 days of history and incidents to GitHub Pages.",
+  "homepage": "https://quickcasa.github.io/status-page/",
+  "bugs": {
+    "url": "https://github.com/QuickCasa/status-page/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuickCasa/status-page.git"
+  },
+  "license": "MIT",
+  "author": "QuickCasa (https://quickcasa.ai)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "monitor": "node monitor/run.ts",
+    "preview": "vite preview --port 8793",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "@quickcasa/eslint-config": "^1.0.0",
+    "@types/node": "^22.20.5",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.12.0",
+    "jsdom": "^30.1.1",
+    "prettier": "^3.9.9",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}

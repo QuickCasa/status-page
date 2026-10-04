@@ -1,0 +1,29 @@
+name: Bug report
+description: A check comes out wrong, the workflow fails, or the page breaks.
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: The steps, and the parts of your status.config.json that matter. Leave out any address you'd rather keep private.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Workflow log, for a problem with the checks
+      description: The output of the "Check every target" step, if there is one.
+      render: text
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device, for a problem with the page
+      placeholder: For example, Safari on an iPhone 15, or Firefox 131 on Windows 11

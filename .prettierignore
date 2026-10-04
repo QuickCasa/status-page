@@ -1,0 +1,8 @@
+dist
+site
+node_modules
+package-lock.json
+CHANGELOG.md
+# People who use this as a template edit their config by hand, and a
+# formatting check shouldn't fail their builds for it.
+status.config.json

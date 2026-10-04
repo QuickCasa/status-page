@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest something new, or a change to something that already exists.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Our projects keep a narrow scope on purpose. If the repository has a CONTRIBUTING.md, check its scope rules first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Who runs into it, and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried instead?
+      description: Any workarounds or other tools you've looked at.

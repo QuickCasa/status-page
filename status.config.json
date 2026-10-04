@@ -1,0 +1,39 @@
+{
+  "$schema": "./status.config.schema.json",
+  "title": "QuickCasa open source status",
+  "description": "Live status of the free, open source tools QuickCasa publishes, checked about every five minutes.",
+  "groups": ["Apps", "Embeds"],
+  "targets": [
+    {
+      "id": "rental-inspection",
+      "label": "Rental inspection app",
+      "group": "Apps",
+      "url": "https://quickcasa.github.io/rental-inspection/",
+      "contains": "inspection app"
+    },
+    {
+      "id": "pet-profile",
+      "label": "Pet profile generator",
+      "group": "Apps",
+      "url": "https://quickcasa.github.io/pet-profile/"
+    },
+    {
+      "id": "rubs-calculator",
+      "label": "RUBS calculator",
+      "group": "Apps",
+      "url": "https://quickcasa.github.io/rubs-calculator/"
+    },
+    {
+      "id": "accessibility-widget",
+      "label": "Accessibility widget script",
+      "group": "Embeds",
+      "url": "https://quickcasa.github.io/accessibility-widget/v1/accessibility.js"
+    },
+    {
+      "id": "accessibility-demo",
+      "label": "Accessibility widget demo",
+      "group": "Embeds",
+      "url": "https://quickcasa.github.io/accessibility-widget/"
+    }
+  ]
+}
