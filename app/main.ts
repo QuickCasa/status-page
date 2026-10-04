@@ -1,3 +1,4 @@
+import '@fontsource-variable/space-grotesk/wght.css'
 import './styles.css'
 import { DOCUMENT_FILE } from '../shared/constants.ts'
 import type { SourceConfig } from '../shared/types.ts'

@@ -1,33 +1,34 @@
 :root {
   color-scheme: light dark;
-  --paper: #fbfaff;
+  --paper: #ffffff;
   --panel: #ffffff;
-  --ink: #14121f;
-  --muted: #615d72;
-  --line: #e6e3f0;
-  --accent: #5b1fe0;
+  --ink: #141330;
+  --muted: #56546e;
+  --line: #e4e2ec;
+  --accent: #6c43ff;
   --ok: #1a8a4a;
   --blip: #b86e00;
   --bad: #c73232;
   --empty: #dcd9e6;
-  --shadow: 0 1px 2px rgb(20 18 31 / 6%), 0 8px 24px -12px rgb(91 31 224 / 18%);
+  --display:
+    'Space Grotesk Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
   --page-width: 880px;
   --gutter: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #0f0d17;
-    --panel: #17141f;
-    --ink: #f2f0fa;
-    --muted: #a8a3bb;
-    --line: #2a2640;
-    --accent: #a98bff;
+    --paper: #0e0d1a;
+    --panel: #0e0d1a;
+    --ink: #f1effa;
+    --muted: #aaa7c0;
+    --line: #2a2840;
+    --accent: #a18aff;
     --ok: #3ccf7a;
     --blip: #f0a63a;
     --bad: #ff6b6b;
     --empty: #2c2840;
-    --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 24px -12px rgb(0 0 0 / 60%);
   }
 }
 
@@ -46,6 +47,12 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2 {
+  font-family: var(--display);
+  font-weight: 500;
 }
 
 a {
@@ -75,14 +82,14 @@ a {
 }
 
 .masthead {
-  padding: 40px 0 0;
+  padding: 56px 0 0;
 }
 
 .masthead__title {
   margin: 0;
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
 }
 
 .masthead__description {
@@ -99,12 +106,10 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  margin: 24px 0 28px;
-  padding: 24px 26px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--panel);
-  box-shadow: var(--shadow);
+  margin: 32px 0 36px;
+  padding: 22px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
 }
 
 .banner__dot {
@@ -118,7 +123,6 @@ a {
 
 .banner--operational .banner__dot {
   background: var(--ok);
-  animation: pulse 2.4s ease-out infinite;
 }
 
 .banner--degraded .banner__dot,
@@ -132,9 +136,9 @@ a {
 
 .banner__headline {
   margin: 0;
-  font-size: clamp(1.4rem, 4vw, 1.9rem);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .banner__detail {
@@ -143,38 +147,37 @@ a {
 }
 
 .sources {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 4px;
-  margin: 0 0 28px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: var(--panel);
+  gap: 4px 24px;
+  margin: -12px 0 32px;
+  border-bottom: 1px solid var(--line);
 }
 
 .sources__option {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 40px;
-  padding: 6px 16px;
+  min-height: 44px;
+  margin-bottom: -1px;
+  padding: 6px 0;
   border: 0;
-  border-radius: 999px;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  color: var(--ink);
-  font: inherit;
-  font-weight: 600;
+  color: var(--muted);
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
 }
 
 .sources__option:hover {
-  background: var(--line);
+  color: var(--ink);
 }
 
 .sources__option[aria-pressed='true'] {
-  background: var(--ink);
-  color: var(--paper);
+  border-bottom-color: var(--ink);
+  color: var(--ink);
 }
 
 .status-dot {
@@ -230,10 +233,11 @@ a {
   margin: 0 0 4px;
   padding: 0 0 8px;
   border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.8rem;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -400,7 +404,6 @@ a {
   color: var(--paper);
   font-size: 0.8rem;
   line-height: 1.4;
-  box-shadow: var(--shadow);
   pointer-events: none;
 }
 
@@ -414,23 +417,8 @@ a {
   }
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgb(26 138 74 / 45%);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgb(26 138 74 / 0%);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgb(26 138 74 / 0%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .tick,
-  .banner--operational .banner__dot {
+  .tick {
     animation: none;
   }
 }
@@ -442,7 +430,6 @@ a {
 
   .banner {
     gap: 14px;
-    padding: 20px 18px;
   }
 
   .board__legend {
